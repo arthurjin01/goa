@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,8 +14,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // AC Button
+        // Buttons
         Button allClearButton = findViewById(R.id.button_all_clear);
+        Button changeSignButton = findViewById(R.id.button_change_sign);
+        Button percentButton = findViewById(R.id.button_percent);
+        Button divideButton = findViewById(R.id.button_divide);
+        Button multiButton = findViewById(R.id.button_multiply);
+        Button minusButton = findViewById(R.id.button_minus);
+        Button additionButton = findViewById(R.id.button_plus);
+        Button buttonNine = findViewById(R.id.button_nine);
+        Button buttonEight = findViewById(R.id.button_eight);
+        Button buttonSeven = findViewById(R.id.button_seven);
+        Button buttonSix = findViewById(R.id.button_six);
+        Button buttonFive = findViewById(R.id.button_five);
+        Button buttonFour = findViewById(R.id.button_four);
+        Button buttonThree = findViewById(R.id.button_three);
+        Button buttonTwo = findViewById(R.id.button_two);
+        Button buttonOne = findViewById(R.id.button_one);
+        Button buttonZero = findViewById(R.id.button_zero);
+        Button decimalButton = findViewById(R.id.button_dot);
+        Button equalsButton = findViewById(R.id.button_equals);
+
+        // AC Button
         allClearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Change Sign Button
-        Button changeSignButton = findViewById(R.id.button_change_sign);
         changeSignButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Percent button
-        Button percentButton = findViewById(R.id.button_percent);
         percentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Divide button
-        Button divideButton = findViewById(R.id.button_divide);
         divideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,38 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 7
-        Button buttonSeven = findViewById(R.id.button_seven);
-        buttonSeven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Seven was tapped");
-            }
-        });
-
-        // 8
-        Button buttonEight = findViewById(R.id.button_eight);
-        buttonEight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Eight was tapped");
-            }
-        });
-
-        // 9
-        Button buttonNine = findViewById(R.id.button_nine);
-        buttonNine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Nine was tapped");
-            }
-        });
-
         // Multiplication button
-        Button multiButton = findViewById(R.id.button_x);
         multiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,38 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 4
-        Button buttonFour = findViewById(R.id.button_four);
-        buttonFour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Four was tapped");
-            }
-        });
-
-        // 5
-        Button buttonFive = findViewById(R.id.button_five);
-        buttonFive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Five was tapped");
-            }
-        });
-
-        // 6
-        Button buttonSix = findViewById(R.id.button_six);
-        buttonSix.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Six was tapped");
-            }
-        });
-
         // Subtraction button
-        Button minusButton = findViewById(R.id.button_minus);
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,38 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 1
-        Button buttonOne = findViewById(R.id.button_one);
-        buttonOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("One was tapped");
-            }
-        });
-
-        // 2
-        Button buttonTwo = findViewById(R.id.button_two);
-        buttonTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Two was tapped");
-            }
-        });
-
-        // 3
-        Button buttonThree = findViewById(R.id.button_three);
-        buttonThree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code executed when button tapped
-                System.out.println("Three was tapped");
-            }
-        });
-
         // Addition button
-        Button additionButton = findViewById(R.id.button_plus);
         additionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,8 +98,92 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 9
+        buttonNine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Nine was tapped");
+            }
+        });
+
+        // 8
+        buttonEight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Eight was tapped");
+            }
+        });
+
+        // 7
+        buttonSeven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Seven was tapped");
+
+                // Append digit to the right of existing number
+
+                // Display current number
+            }
+        });
+
+        // 6
+        buttonSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Six was tapped");
+            }
+        });
+
+        // 5
+        buttonFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Five was tapped");
+            }
+        });
+
+        // 4
+        buttonFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Four was tapped");
+            }
+        });
+
+        // 3
+        buttonThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Three was tapped");
+            }
+        });
+
+        // 2
+        buttonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("Two was tapped");
+            }
+        });
+
+        // 1
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code executed when button tapped
+                System.out.println("One was tapped");
+            }
+        });
+
         // 0
-        Button buttonZero = findViewById(R.id.button_zero);
         buttonZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -184,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Decimal point
-        Button decimalButton = findViewById(R.id.button_dot);
         decimalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,7 +202,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Equals button
-        Button equalsButton = findViewById(R.id.button_equals);
         equalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

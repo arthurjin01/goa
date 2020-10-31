@@ -20,7 +20,7 @@
         android:textAlignment="textStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/black"
-        android:textSize="22sp" />
+        android:textSize="20sp" />
 
     <!-- Display -->
     <TextView
@@ -140,7 +140,7 @@
             app:cornerRadius="15dp" />
 
         <Button
-            android:id="@+id/button_x"
+            android:id="@+id/button_multiply"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:layout_weight="1"
