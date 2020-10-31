@@ -353,7 +353,5 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Equals button was tapped");
             }
         });
-
-        
     }
 }
