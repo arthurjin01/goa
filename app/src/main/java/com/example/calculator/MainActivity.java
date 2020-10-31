@@ -9,10 +9,18 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Variables
+    String currentNumberString = "0";
+    double previousNumber;
+    String pendingOperation = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView displayTextView = findViewById(R.id.text_view_display);
 
         // Buttons
         Button allClearButton = findViewById(R.id.button_all_clear);
@@ -104,6 +112,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Nine was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "9";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 9
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 9 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -113,6 +135,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Eight was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "8";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 8
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 8 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -124,8 +160,18 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Seven was tapped");
 
                 // Append digit to the right of existing number
+                final String enteredDigit = "7";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 7
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 7 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
 
                 // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -135,6 +181,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Six was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "6";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 6
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 6 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -144,6 +204,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Five was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "5";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 5
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 5 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -153,6 +227,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Four was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "4";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 4
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 4 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -162,6 +250,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Three was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "3";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 3
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 3 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -171,6 +273,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Two was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "2";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 2
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 2 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -180,6 +296,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("One was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "1";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 1
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 1 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -189,6 +319,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Zero was tapped");
+
+                // Append digit to the right of existing number
+                final String enteredDigit = "0";
+                if (currentNumberString.equals("0")) {
+                    // If display = 0, replace with 0
+                    currentNumberString = enteredDigit;
+                }
+                else {
+                    // If display != 0, append 0 to previous enteredDigit
+                    currentNumberString += enteredDigit;
+                }
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
