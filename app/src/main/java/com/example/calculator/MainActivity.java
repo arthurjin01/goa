@@ -94,11 +94,12 @@ public class MainActivity extends AppCompatActivity {
                 if (currentNumberString.equals("0")) {
                     // If display is "0", then do not replace it with the digit
                     currentNumberString = "0";
-                } else {
+                }
+                else {
                     // If display is not "0", then convert number to a hundredth
                     currentNumberString = "0.0" + currentNumberString;
                 }
-                // Display the current number
+                // Display current number
                 displayTextView.setText(currentNumberString);
 
             }
