@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     String currentNumberString = "0";
     double previousNumber;
     String pendingOperation = null;
-
+    boolean clearDisplayOnNextDigit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +76,40 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Divide was tapped");
+
+                if (pendingOperation != null) {
+                    // Convert current number as double
+                    double currentNumber = Double.parseDouble(currentNumberString);
+
+                    // Perform pending operation on previous number and current number
+                    if (pendingOperation.equals("Add")) {
+                        previousNumber += currentNumber;
+                    }
+                    else if (pendingOperation.equals("Subtract")){
+                        previousNumber -= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Multiply")){
+                        previousNumber *= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Divide")){
+                        previousNumber /= currentNumber;
+                    }
+
+                    // Replace current number displayed with result
+                    currentNumberString = Double.valueOf(previousNumber).toString();
+
+                    // Display current number
+                    displayTextView.setText(currentNumberString);
+                }
+
+                // Save current number as previous number
+                previousNumber = Double.parseDouble(currentNumberString);
+
+                // Remember selected operator as pending operation
+                pendingOperation = "Divide";
+
+                // Clear display on next digit input
+                clearDisplayOnNextDigit = true;
             }
         });
 
@@ -85,6 +119,40 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Multiply was tapped");
+
+                if (pendingOperation != null) {
+                    // Convert current number as double
+                    double currentNumber = Double.parseDouble(currentNumberString);
+
+                    // Perform pending operation on previous number and current number
+                    if (pendingOperation.equals("Add")) {
+                        previousNumber += currentNumber;
+                    }
+                    else if (pendingOperation.equals("Subtract")){
+                        previousNumber -= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Multiply")){
+                        previousNumber *= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Divide")){
+                        previousNumber /= currentNumber;
+                    }
+
+                    // Replace current number displayed with result
+                    currentNumberString = Double.valueOf(previousNumber).toString();
+
+                    // Display current number
+                    displayTextView.setText(currentNumberString);
+                }
+
+                // Save current number as previous number
+                previousNumber = Double.parseDouble(currentNumberString);
+
+                // Remember selected operator as pending operation
+                pendingOperation = "Multiply";
+
+                // Clear display on next digit input
+                clearDisplayOnNextDigit = true;
             }
         });
 
@@ -94,6 +162,40 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Minus was tapped");
+
+                if (pendingOperation != null) {
+                    // Convert current number as double
+                    double currentNumber = Double.parseDouble(currentNumberString);
+
+                    // Perform pending operation on previous number and current number
+                    if (pendingOperation.equals("Add")) {
+                        previousNumber += currentNumber;
+                    }
+                    else if (pendingOperation.equals("Subtract")){
+                        previousNumber -= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Multiply")){
+                        previousNumber *= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Divide")){
+                        previousNumber /= currentNumber;
+                    }
+
+                    // Replace current number displayed with result
+                    currentNumberString = Double.valueOf(previousNumber).toString();
+
+                    // Display current number
+                    displayTextView.setText(currentNumberString);
+                }
+
+                // Save current number as previous number
+                previousNumber = Double.parseDouble(currentNumberString);
+
+                // Remember selected operator as pending operation
+                pendingOperation = "Subtract";
+
+                // Clear display on next digit input
+                clearDisplayOnNextDigit = true;
             }
         });
 
@@ -103,6 +205,40 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Plus was tapped");
+
+                if (pendingOperation != null) {
+                    // Convert current number as double
+                    double currentNumber = Double.parseDouble(currentNumberString);
+
+                    // Perform pending operation on previous number and current number
+                    if (pendingOperation.equals("Add")) {
+                        previousNumber += currentNumber;
+                    }
+                    else if (pendingOperation.equals("Subtract")){
+                        previousNumber -= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Multiply")){
+                        previousNumber *= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Divide")){
+                        previousNumber /= currentNumber;
+                    }
+
+                    // Replace current number displayed with result
+                    currentNumberString = Double.valueOf(previousNumber).toString();
+
+                    // Display current number
+                    displayTextView.setText(currentNumberString);
+                }
+
+                // Save current number as previous number
+                previousNumber = Double.parseDouble(currentNumberString);
+
+                // Remember selected operator as pending operation
+                pendingOperation = "Add";
+
+                // Clear display on next digit input
+                clearDisplayOnNextDigit = true;
             }
         });
 
@@ -112,6 +248,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Nine was tapped");
+
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
 
                 // Append digit to the right of existing number
                 final String enteredDigit = "9";
@@ -136,6 +278,12 @@ public class MainActivity extends AppCompatActivity {
                 // Code executed when button tapped
                 System.out.println("Eight was tapped");
 
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
+
                 // Append digit to the right of existing number
                 final String enteredDigit = "8";
                 if (currentNumberString.equals("0")) {
@@ -158,6 +306,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Seven was tapped");
+
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
 
                 // Append digit to the right of existing number
                 final String enteredDigit = "7";
@@ -182,6 +336,12 @@ public class MainActivity extends AppCompatActivity {
                 // Code executed when button tapped
                 System.out.println("Six was tapped");
 
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
+
                 // Append digit to the right of existing number
                 final String enteredDigit = "6";
                 if (currentNumberString.equals("0")) {
@@ -204,6 +364,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Five was tapped");
+
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
 
                 // Append digit to the right of existing number
                 final String enteredDigit = "5";
@@ -228,6 +394,12 @@ public class MainActivity extends AppCompatActivity {
                 // Code executed when button tapped
                 System.out.println("Four was tapped");
 
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
+
                 // Append digit to the right of existing number
                 final String enteredDigit = "4";
                 if (currentNumberString.equals("0")) {
@@ -250,6 +422,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Three was tapped");
+
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
 
                 // Append digit to the right of existing number
                 final String enteredDigit = "3";
@@ -274,6 +452,12 @@ public class MainActivity extends AppCompatActivity {
                 // Code executed when button tapped
                 System.out.println("Two was tapped");
 
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
+
                 // Append digit to the right of existing number
                 final String enteredDigit = "2";
                 if (currentNumberString.equals("0")) {
@@ -297,6 +481,12 @@ public class MainActivity extends AppCompatActivity {
                 // Code executed when button tapped
                 System.out.println("One was tapped");
 
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
+
                 // Append digit to the right of existing number
                 final String enteredDigit = "1";
                 if (currentNumberString.equals("0")) {
@@ -319,6 +509,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Zero was tapped");
+
+                // Check if required to clear display on next digit input
+                if (clearDisplayOnNextDigit) {
+                    currentNumberString = "0";
+                    clearDisplayOnNextDigit = false;
+                }
 
                 // Append digit to the right of existing number
                 final String enteredDigit = "0";
