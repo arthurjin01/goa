@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     double previousNumber;
     String pendingOperation = null;
     boolean clearDisplayOnNextDigit = false;
+    boolean currentNumberStringHasDecimal = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("All clear was tapped");
+
+                // Reset all variables
+                currentNumberString = "0";
+                previousNumber = 0.0;
+                pendingOperation = null;
+                clearDisplayOnNextDigit = false;
+                currentNumberStringHasDecimal = false;
+
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -58,6 +69,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Change sign was tapped");
+
+                // Is current number negative
+                if (currentNumberString.startsWith("-")) {
+                    // Negative; remove negative
+                    currentNumberString = currentNumberString.replace("-", "");
+                }
+                else {
+                    // Positive; make negative
+                    currentNumberString = "-" + currentNumberString;
+                }
+                // Display current number
+                displayTextView.setText(currentNumberString);
             }
         });
 
@@ -67,6 +90,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Percent was tapped");
+
+                if (currentNumberString.equals("0")) {
+                    // If display is "0", then do not replace it with the digit
+                    currentNumberString = "0";
+                } else {
+                    // If display is not "0", then convert number to a hundredth
+                    currentNumberString = "0.0" + currentNumberString;
+                }
+                // Display the current number
+                displayTextView.setText(currentNumberString);
+
             }
         });
 
@@ -253,6 +287,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -282,6 +317,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -311,6 +347,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -340,6 +377,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -369,6 +407,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -398,6 +437,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -427,6 +467,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -456,6 +497,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -485,6 +527,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -514,6 +557,7 @@ public class MainActivity extends AppCompatActivity {
                 if (clearDisplayOnNextDigit) {
                     currentNumberString = "0";
                     clearDisplayOnNextDigit = false;
+                    currentNumberStringHasDecimal = false;
                 }
 
                 // Append digit to the right of existing number
@@ -538,6 +582,35 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Decimal point was tapped");
+
+                // Process only if currentNumberString has no decimal yet
+                if (!currentNumberStringHasDecimal) {
+
+                    // Check if required to clear display on next digit input
+                    if (clearDisplayOnNextDigit) {
+                        currentNumberString = "0";
+                        clearDisplayOnNextDigit = false;
+                    }
+
+                    // Append digit to the right of existing number
+                    final String enteredDigit = ".";
+                    if (currentNumberString.equals("0")) {
+                        // If display = 0, replace with .
+                        currentNumberString = enteredDigit;
+                    }
+                    else {
+                        // If display != 0, append . to previous enteredDigit
+                        currentNumberString += enteredDigit;
+                    }
+
+                    // Display current number
+                    displayTextView.setText(currentNumberString);
+
+                    // Set flag to indicate currentNumberString already has decimal
+                    currentNumberStringHasDecimal = true;
+
+
+                }
             }
         });
 
@@ -547,6 +620,36 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code executed when button tapped
                 System.out.println("Equals button was tapped");
+
+                if (pendingOperation != null) {
+                    // Convert current number as double
+                    double currentNumber = Double.parseDouble(currentNumberString);
+
+                    // Perform pending operation on previous number and current number
+                    if (pendingOperation.equals("Add")) {
+                        previousNumber += currentNumber;
+                    }
+                    else if (pendingOperation.equals("Subtract")){
+                        previousNumber -= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Multiply")){
+                        previousNumber *= currentNumber;
+                    }
+                    else if (pendingOperation.equals("Divide")){
+                        previousNumber /= currentNumber;
+                    }
+
+                    // Replace current number displayed with result
+                    currentNumberString = Double.valueOf(previousNumber).toString();
+
+                    // Display current number
+                    displayTextView.setText(currentNumberString);
+                }
+                // Clear pending operation
+                pendingOperation = null;
+
+                // Clear display on next digit input
+                clearDisplayOnNextDigit = true;
             }
         });
     }
