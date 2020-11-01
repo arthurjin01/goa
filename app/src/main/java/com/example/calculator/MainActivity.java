@@ -15,13 +15,19 @@ public class MainActivity extends AppCompatActivity {
     String pendingOperation = null;
     boolean clearDisplayOnNextDigit = false;
     boolean currentNumberStringHasDecimal = false;
+    String previousOperationsDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Main display
         TextView displayTextView = findViewById(R.id.text_view_display);
+
+        // Operations display
+        TextView displayOperations = findViewById(R.id.operations_display);
+        String Default_Operations_Display_Value = "0";
 
         // Buttons
         Button allClearButton = findViewById(R.id.button_all_clear);
@@ -57,9 +63,13 @@ public class MainActivity extends AppCompatActivity {
                 pendingOperation = null;
                 clearDisplayOnNextDigit = false;
                 currentNumberStringHasDecimal = false;
+                previousOperationsDisplay = "0";
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display operations
+                displayOperations.setText("0");
             }
         });
 
@@ -81,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -145,6 +158,20 @@ public class MainActivity extends AppCompatActivity {
 
                 // Clear display on next digit input
                 clearDisplayOnNextDigit = true;
+
+                // Display in operationsDisplay
+                if (pendingOperation.equals("Add")) {
+                    displayOperations.setText("+");
+                }
+                else if (pendingOperation.equals("Subtract")) {
+                    displayOperations.setText("-");
+                }
+                else if (pendingOperation.equals("Multiply")) {
+                    displayOperations.setText("x");
+                }
+                else if (pendingOperation.equals("Divide")) {
+                    displayOperations.setText("÷");
+                }
             }
         });
 
@@ -188,6 +215,20 @@ public class MainActivity extends AppCompatActivity {
 
                 // Clear display on next digit input
                 clearDisplayOnNextDigit = true;
+
+                // Display in operationsDisplay
+                if (pendingOperation.equals("Add")) {
+                    displayOperations.setText("+");
+                }
+                else if (pendingOperation.equals("Subtract")) {
+                    displayOperations.setText("-");
+                }
+                else if (pendingOperation.equals("Multiply")) {
+                    displayOperations.setText("x");
+                }
+                else if (pendingOperation.equals("Divide")) {
+                    displayOperations.setText("÷");
+                }
             }
         });
 
@@ -231,6 +272,20 @@ public class MainActivity extends AppCompatActivity {
 
                 // Clear display on next digit input
                 clearDisplayOnNextDigit = true;
+
+                // Display in operationsDisplay
+                if (pendingOperation.equals("Add")) {
+                    displayOperations.setText("+");
+                }
+                else if (pendingOperation.equals("Subtract")) {
+                    displayOperations.setText("-");
+                }
+                else if (pendingOperation.equals("Multiply")) {
+                    displayOperations.setText("x");
+                }
+                else if (pendingOperation.equals("Divide")) {
+                    displayOperations.setText("÷");
+                }
             }
         });
 
@@ -274,6 +329,20 @@ public class MainActivity extends AppCompatActivity {
 
                 // Clear display on next digit input
                 clearDisplayOnNextDigit = true;
+
+                // Display in operationsDisplay
+                if (pendingOperation.equals("Add")) {
+                    displayOperations.setText("+");
+                }
+                else if (pendingOperation.equals("Subtract")) {
+                    displayOperations.setText("-");
+                }
+                else if (pendingOperation.equals("Multiply")) {
+                    displayOperations.setText("x");
+                }
+                else if (pendingOperation.equals("Divide")) {
+                    displayOperations.setText("÷");
+                }
             }
         });
 
@@ -304,6 +373,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -334,6 +406,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -364,6 +439,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -394,6 +472,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -424,6 +505,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -454,6 +538,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -484,6 +571,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -514,6 +604,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -544,6 +637,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -574,6 +670,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
+
+                // Display in operationsDisplay
+                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -596,8 +695,8 @@ public class MainActivity extends AppCompatActivity {
                     // Append digit to the right of existing number
                     final String enteredDigit = ".";
                     if (currentNumberString.equals("0")) {
-                        // If display = 0, replace with .
-                        currentNumberString = enteredDigit;
+                        // If display = 0, append . to previous enteredDigit
+                        currentNumberString += enteredDigit;
                     }
                     else {
                         // If display != 0, append . to previous enteredDigit
@@ -610,7 +709,8 @@ public class MainActivity extends AppCompatActivity {
                     // Set flag to indicate currentNumberString already has decimal
                     currentNumberStringHasDecimal = true;
 
-
+                    // Display in operationsDisplay
+                    displayOperations.setText(currentNumberString);
                 }
             }
         });
@@ -651,6 +751,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Clear display on next digit input
                 clearDisplayOnNextDigit = true;
+
+                // Display in operationsDisplay
+                displayOperations.setText("=");
             }
         });
     }
