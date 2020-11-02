@@ -112,47 +112,47 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (currentNumberString.endsWith("9")) {
                     // Remove one 9
-                    currentNumberString = currentNumberString.replaceFirst("9", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("8")) {
                     // Remove one 8
-                    currentNumberString = currentNumberString.replaceFirst("8", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("7")) {
                     // Remove one 7
-                    currentNumberString = currentNumberString.replaceFirst("7", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("6")) {
                     // Remove one 6
-                    currentNumberString = currentNumberString.replaceFirst("6", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("5")) {
                     // Remove one 5
-                    currentNumberString = currentNumberString.replaceFirst("5", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("4")) {
                     // Remove one 4
-                    currentNumberString = currentNumberString.replaceFirst("4", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("3")) {
                     // Remove one 3
-                    currentNumberString = currentNumberString.replaceFirst("3", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("2")) {
                     // Remove one 2
-                    currentNumberString = currentNumberString.replaceFirst("2", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("1")) {
                     // Remove one 1
-                    currentNumberString = currentNumberString.replaceFirst("1", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith("0")) {
                     // Remove one 0
-                    currentNumberString = currentNumberString.replaceFirst("0", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
                 else if (currentNumberString.endsWith(".")) {
                     // Remove one .
-                    currentNumberString = currentNumberString.replaceFirst(".", "");
+                    currentNumberString = currentNumberString.substring(0, currentNumberString.length() - 1);
                 }
 
                 // Display current number
