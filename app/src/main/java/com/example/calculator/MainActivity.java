@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     boolean clearDisplayOnNextDigit = false;
     boolean currentNumberStringHasDecimal = false;
     String previousOperationsDisplay;
+    int currentNumberStringLength = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         // Buttons
         Button allClearButton = findViewById(R.id.button_all_clear);
         Button changeSignButton = findViewById(R.id.button_change_sign);
-        Button percentButton = findViewById(R.id.button_percent);
+        Button backspaceButton = findViewById(R.id.button_backspace);
         Button divideButton = findViewById(R.id.button_divide);
         Button multiButton = findViewById(R.id.button_multiply);
         Button minusButton = findViewById(R.id.button_minus);
@@ -97,24 +98,65 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Percent button
-        percentButton.setOnClickListener(new View.OnClickListener() {
+        // Backspace Button
+        backspaceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Code executed when button tapped
-                System.out.println("Percent was tapped");
+                System.out.println("Backspace was tapped");
 
-                if (currentNumberString.equals("0")) {
-                    // If display is "0", then do not replace it with the digit
-                    currentNumberString = "0";
+                // Delete the right-most digit
+                if (currentNumberString.length() <= 1) {
+                    // Replace number with 0
+                    currentNumberString = currentNumberString.replace(currentNumberString, "0");
                 }
-                else {
-                    // If display is not "0", then convert number to a hundredth
-                    currentNumberString = "0.0" + currentNumberString;
+                else if (currentNumberString.endsWith("9")) {
+                    // Remove one 9
+                    currentNumberString = currentNumberString.replaceFirst("9", "");
                 }
+                else if (currentNumberString.endsWith("8")) {
+                    // Remove one 8
+                    currentNumberString = currentNumberString.replaceFirst("8", "");
+                }
+                else if (currentNumberString.endsWith("7")) {
+                    // Remove one 7
+                    currentNumberString = currentNumberString.replaceFirst("7", "");
+                }
+                else if (currentNumberString.endsWith("6")) {
+                    // Remove one 6
+                    currentNumberString = currentNumberString.replaceFirst("6", "");
+                }
+                else if (currentNumberString.endsWith("5")) {
+                    // Remove one 5
+                    currentNumberString = currentNumberString.replaceFirst("5", "");
+                }
+                else if (currentNumberString.endsWith("4")) {
+                    // Remove one 4
+                    currentNumberString = currentNumberString.replaceFirst("4", "");
+                }
+                else if (currentNumberString.endsWith("3")) {
+                    // Remove one 3
+                    currentNumberString = currentNumberString.replaceFirst("3", "");
+                }
+                else if (currentNumberString.endsWith("2")) {
+                    // Remove one 2
+                    currentNumberString = currentNumberString.replaceFirst("2", "");
+                }
+                else if (currentNumberString.endsWith("1")) {
+                    // Remove one 1
+                    currentNumberString = currentNumberString.replaceFirst("1", "");
+                }
+                else if (currentNumberString.endsWith("0")) {
+                    // Remove one 0
+                    currentNumberString = currentNumberString.replaceFirst("0", "");
+                }
+                else if (currentNumberString.endsWith(".")) {
+                    // Remove one .
+                    currentNumberString = currentNumberString.replaceFirst(".", "");
+                }
+
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
             }
         });
 
@@ -366,6 +408,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 9
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 9 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -373,9 +419,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -399,6 +442,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 8
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 8 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -406,9 +453,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -432,6 +476,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 7
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 7 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -439,9 +487,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -465,6 +510,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 6
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 6 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -472,9 +521,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -498,6 +544,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 5
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 5 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -505,9 +555,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -531,6 +578,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 4
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 4 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -538,9 +589,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -564,6 +612,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 3
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 3 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -571,9 +623,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -597,6 +646,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 2
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 2 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -604,9 +657,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -630,6 +680,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 1
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 1 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -637,9 +691,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -663,6 +714,10 @@ public class MainActivity extends AppCompatActivity {
                     // If display = 0, replace with 0
                     currentNumberString = enteredDigit;
                 }
+                // Limit to 16 characters
+                else if (currentNumberString.length() > 16) {
+                    currentNumberString += "";
+                }
                 else {
                     // If display != 0, append 0 to previous enteredDigit
                     currentNumberString += enteredDigit;
@@ -670,9 +725,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display current number
                 displayTextView.setText(currentNumberString);
-
-                // Display in operationsDisplay
-                displayOperations.setText(currentNumberString);
             }
         });
 
@@ -698,6 +750,10 @@ public class MainActivity extends AppCompatActivity {
                         // If display = 0, append . to previous enteredDigit
                         currentNumberString += enteredDigit;
                     }
+                    // Limit to 16 characters
+                    else if (currentNumberString.length() > 16) {
+                        currentNumberString += "";
+                    }
                     else {
                         // If display != 0, append . to previous enteredDigit
                         currentNumberString += enteredDigit;
@@ -708,9 +764,6 @@ public class MainActivity extends AppCompatActivity {
 
                     // Set flag to indicate currentNumberString already has decimal
                     currentNumberStringHasDecimal = true;
-
-                    // Display in operationsDisplay
-                    displayOperations.setText(currentNumberString);
                 }
             }
         });

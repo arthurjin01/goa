@@ -56,7 +56,7 @@
             android:insetRight="10dp"
             android:text="AC"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -68,19 +68,19 @@
             android:insetRight="10dp"
             android:text="+/-"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
-            android:id="@+id/button_percent"
+            android:id="@+id/button_backspace"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
             android:backgroundTint="#D6ECF3"
             android:insetRight="10dp"
-            android:text="%"
+            android:text="DEL"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -92,7 +92,7 @@
             android:insetRight="0dp"
             android:text="÷"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
     </LinearLayout>
@@ -114,7 +114,7 @@
             android:insetRight="10dp"
             android:text="7"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -126,7 +126,7 @@
             android:insetRight="10dp"
             android:text="8"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -138,7 +138,7 @@
             android:insetRight="10dp"
             android:text="9"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -150,7 +150,7 @@
             android:insetRight="0dp"
             android:text="x"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
     </LinearLayout>
@@ -172,7 +172,7 @@
             android:insetRight="10dp"
             android:text="4"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -184,7 +184,7 @@
             android:insetRight="10dp"
             android:text="5"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -196,7 +196,7 @@
             android:insetRight="10dp"
             android:text="6"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -208,7 +208,7 @@
             android:insetRight="0dp"
             android:text="-"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
     </LinearLayout>
@@ -230,7 +230,7 @@
             android:insetRight="10dp"
             android:text="1"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -242,7 +242,7 @@
             android:insetRight="10dp"
             android:text="2"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -254,7 +254,7 @@
             android:insetRight="10dp"
             android:text="3"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -266,7 +266,7 @@
             android:insetRight="0dp"
             android:text="+"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
     </LinearLayout>
@@ -289,7 +289,7 @@
             android:text="0"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -301,7 +301,7 @@
             android:insetRight="10dp"
             android:text="."
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
         <Button
@@ -313,7 +313,7 @@
             android:insetRight="0dp"
             android:text="="
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="20sp"
             app:cornerRadius="15dp" />
 
     </LinearLayout>
